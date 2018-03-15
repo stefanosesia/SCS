@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+  $('html, body').animate({
+      scrollTop: $("#target-element").offset().top
+  }, 1000);
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-center" id="navbar3SupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#Scenario">Scenario</a>
+          </li>
+        </ul>
+        <a class="ml-3 btn navbar-btn btn-primary" href="#Demo">Demo</a>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5 text-center" style="background-image: url('img/landing.jpg');background-size:cover;">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-3 mb-4 text-primary" style="background-color: #FFFFFF80;">Autonomous returning rockets collision avoidance</h1>
+          <p class="lead mb-5 " style="background-color: #FFFFFF80;">This webapp is aimed at simulating an additional safety system to the spaceX Autonomous returning module. This is based on the data I gathered from the successful launches of the Falcon 9 rocket and the security procedures put in place for the
+            occasion.</p>
+          <a href="#Demo" class="btn btn-lg btn-primary mx-1">Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container" id="Scenario">
+      <div class="row mb-5">
+        <div class="col-md-7">
+          <h2 class="text-primary">Falcon 9 - stage 1 module return</h2>
+          <p class="">This demo will strongly focus on the Falcon 9 rocket from Space X. This rocket is able to autonomouly adjust its trajectory and return back to earth, landing on a specified
+          platform (either on mainland or on a drone boat). Space x conducted 51 missions to date 49 of which were successful 23 of which had a reported successful self landing.<br>
+          Truly a feat of engineering, thi rocket is able to acheive this thanks to its 9 "Merlin" thrusters and a sophisticated positioning system.<br>
+        After delivering its payload on orbit, the rocket naturally flips itself with the help of a small burst from one of its engines(<i>Boost back burn</i>), when that is acheived and the correct allignment is confirmed,
+        the thruster switches off and the rocket starts descending. Still at supersonc speeds the Falcon 9 uses 3 of its merlin engines for the so called <i>Reentry burn</i>. This is the first space craft
+        to use boost from thrusters at supersonic speeds to slow down instead of deploying a parachute and NASA is studying gathered data aiming to soon use this technology to safely bring men to mars. finally, approaching
+        the landing platform, the positioning system carefully calculates the landing and uses one merling thruster and lateral flaps to land the rocket in its original vertical position.</p>
+        </div>
+        <div class="col-md-5 align-self-center">
+          <img class="img-fluid d-block w-100 img-thumbnail" src="img/autonomous return.png"> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <img class="img-fluid d-block mb-4 w-100 img-thumbnail" src="img/closed area.png"> </div>
+        <div class="col-md-7">
+          <h2 class="text-primary pt-3">Current security procedures</h2>
+          <p class="">As traditional positioning systems based on ground are not precise enough for this manouvres, especially at these speeds, the Falcon 9 carries it's own GPS and sensors, elaborating them on its
+          on-board computer. As the system for now solely relies on sesors already packed in the rocket, NASA and SpaceX are usually also deploying aircrafts with infrared cameras to monitorthe landing phase. <br>
+          Civilians aricrafts are kept safe by the establishment of a vast no-fly zone tht should keep commercial flights safe. <br>
+          With spacex aiming at making such launces more frequent and even planning to land on ground (the falcon managed such a feat 11 times already), the no-fly zone will have to be restricted to a small window and
+          be as narrow as securely possible. This makes sense if taking air traffic into consideration. <br><br>
+          <blockquote class="blockquote">This simulation will revolve around alternative emergency measures should the no-flight zone not be respected or the rocket malfunction getting out of the safe area.</blockquote>
+        <p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 bg-light">
+    <div class="container" id="Demo">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="pb-4 text-secondary">Demo</h2>
+          <p><i>Please press the action buttons on the right to navigate the scenario, the fault tree on the right will help you visualize the failures you are simulating, while the map at the bottom should provide useful context.</i></p>
+        </div>
+      </div>
+      <div class="row FaultTree">
+        <div class="align-self-center text-md-right text-center col-md-6">
+          <h3 class="text-primary pt-3">Fault tree projection</h3>
+          <div class="OriginalState card-body collapse show" data-parent=".FaultTree">
+            <img class="img-fluid d-block" src="img/OriginalState.png">
+          </div>
+
+          <div class="ElectronicsCG card-body collapse" data-parent=".FaultTree">
+            <img class="img-fluid d-block" src="img/ElectronicsCG.png">
+          </div>
+          <div class="ElectronicsCS card-body collapse" data-parent=".FaultTree">
+            <img class="img-fluid d-block" src="img/ElectronicsCS.png">
+          </div>
+          <div class="ElectronicsGS card-body collapse" data-parent=".FaultTree">
+            <img class="img-fluid d-block" src="img/ElectronicsGS.png">
+          </div>
+          <div class="card-body collapse ThrustersDamages" data-parent=".FaultTree">
+            <img class="img-fluid d-block" src="img/ThrustersDamages.png">
+          </div>
+          <div class="card-body collapse TrustersFuel" data-parent=".FaultTree">
+            <img class="img-fluid d-block" src="img/ThrustersFuel.png">
+          </div>
+
+
+        </div>
+
+        <div class="align-self-center text-md-left text-center col-md-6">
+          <h3 class="text-primary pt-3">Navigate possible actions</h3>
+          <div class="container">
+            <div id="accordion" class="accordion">
+              <div class="card mb-0">
+                <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
+                  <a class="card-title"> Thrusters Failure </a>
+                </div>
+                <div id="collapseOne" class="card-body collapse" data-parent="#accordion">
+
+                  <div class="container">
+                      <div class="accordion FaultTree">
+                        <div class="btn-group">
+                        <button type="button" class="btn btn-outline-danger" data-toggle="collapse" data-parent=".FaultTree" href=".ThrustersDamages">Thrusters integrity damaged</button>
+                        <button type="button" class="btn btn-outline-danger" data-toggle="collapse" data-parent=".FaultTree" href=".TrustersFuel">Thrusters out of fuel</button>
+                        </div>
+                          <div class="card mb-0">
+                              <div class="card-body collapse ThrustersDamages" data-parent=".FaultTree" >
+                                <div class="list-group">
+                                  <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Risk description</h5> </div>
+                                    <p class="mb-1"><ul>
+                                        <li>The thrusters and aerodynamic flaps are damaged.</li>
+                                      <li>Unforeseen wind conditions have put the rocket out of its correct allignment.</li></ul></p> <small>This could have happened due to a human error on the preparation phase or due to impacts or over-heating during the launch.</small> </a>
+                                  <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Action</h5> </div>
+                                    <p class="mb-1">If the rocket is still inside of the safety perimeter and can crash without causing substantial damage (such as landing in the ocean), then all systems are switched off and the fall is monitored. Otherwise the supersonic parachute is deployed to try and slow down the fall.
+                                    </p></a>
+                                </div>
+                              </div>
+                              <div class="card-body collapse TrustersFuel" data-parent=".FaultTree" >
+                                <div class="list-group">
+                                  <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Risk description</h5> </div>
+                                      <p class="mb-1"><ul>
+                                          <li>The thrusters are out of fuel.</li>
+                                        <li>Unforeseen wind conditions have put the rocket out of its correct allignment.</li></ul></p> <small>This could have happened due to a leak in the fuel tanks or a miscalculation of the required fuel.</small> </a>
+                                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                      <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">Action</h5> </div>
+                                      <p class="mb-1">If the rocket is still inside of the safety perimeter and can crash without causing substantial damage (such as landing in the ocean), then all systems are switched off and the fall is monitored. Otherwise the flaps are used to try and reposition the rocket on its original trajectory.
+                                      </p></a>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+                <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                  <a class="card-title"> Navigation Failure </a>
+                </div>
+                <div id="collapseTwo" class="card-body collapse show" data-parent="#accordion">
+
+                  <div class="container">
+                      <div class="accordion FaultTree">
+                        <div class="btn-group">
+                        <button type="button" class="btn btn-outline-danger" data-toggle="collapse" data-parent=".FaultTree" href=".ElectronicsCG">Computer & GPS</button>
+                        <button type="button" class="btn btn-outline-danger" data-toggle="collapse" data-parent=".FaultTree" href=".ElectronicsCS">Computer & Sensors</button>
+                        <button type="button" class="btn btn-outline-danger" data-toggle="collapse" data-parent=".FaultTree" href=".ElectronicsGS">Sensors & GPS</button>
+                        </div>
+                          <div class="card mb-0">
+                              <div class="card-body collapse ElectronicsCG" data-parent=".FaultTree" >
+                                <div class="list-group">
+                                  <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Risk description</h5> </div>
+                                      <p class="mb-1"><ul>
+                                          <li>The on-board and backup computers are irresponsive or faulty.</li>
+                                        <li>The GPS module stopped transmitting or is getting a wrong position.</li></ul></p> <small>This could have been due to overheating during the lauch phase or a short circuit in the electronics.</small> </a>
+                                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Action</h5> </div>
+                                      <div class="accordion Emergency">
+                                        <div class="accordion Sensors">
+                                          <div class="btn-group">
+                                          <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-parent=".Sensors" href=".groundSensors">Use Ground Sensors</button>
+                                          </div>
+                                            <div class="card mb-0">
+                                                <div class="card-body collapse groundSensors" data-parent=".Sensors" >
+                                                  <p>Three ground GPS and radar systems should be deployed around the safety area (on floating platforms or drones if the return is scheduled on water) to provide an emergency tracking system.
+                                                  An emergency communiction module should be put in place to trigger the basic systems.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-parent=".Emergency" href=".Aerodynamics">Areodynamics</button>
+
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-parent=".Emergency" href=".SupersonicParachute">Parachute</button>
+
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-parent=".Emergency" href=".Evacuate">Evacuate</button>
+
+                                        </div>
+                                          <div class="card mb-0">
+                                              <div class="card-body collapse Aerodynamics" data-parent=".Emergency" >
+                                                <p> Should thrusters and flaps still be responsive, they should be triggered to steer the rocket to crash inside of the safety perimeter.</p>
+                                              </div>
+                                              <div class="card-body collapse SupersonicParachute" data-parent=".Emergency" >
+                                                <p>Should steering not be a viable option the supersonic parachute should be deployed to break the fall.</p>
+                                              </div>
+                                              <div class="card-body collapse Evacuate" data-parent=".Emergency" >
+                                                <p>Should all other option fail, the rocket would still be tracked and areas could eventually be evacuated</p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </a>
+                                </div>
+                              </div>
+                              <div class="card-body collapse ElectronicsCS" data-parent=".FaultTree" >
+                                <div class="list-group">
+                                  <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Risk description</h5> </div>
+                                      <p class="mb-1"><ul>
+                                        <li>The on-board and backup computers are irresponsive or faulty.</li>
+                                      <li>The on-board sensors stopped working, or are not reporting correctly to the on-board computer.</li></ul></p> <small>This could have been due to overheating during the lauch phase or a short circuit in the electronics.</small> </a>
+                                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Action</h5> </div>
+                                      <div class="accordion Sensors">
+                                        <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-parent=".Sensors" href=".groundSensors">Use Ground Sensors</button>
+                                        </div>
+                                          <div class="card mb-0">
+                                              <div class="card-body collapse groundSensors" data-parent=".Sensors" >
+                                                <p>Three ground GPS and radar systems should be deployed around the safety area (on floating platforms or drones if the return is scheduled on water) to provide an emergency tracking system.
+                                                An emergency communiction module should be put in place to trigger the basic systems.</p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="accordion Emergency">
+                                        <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-parent=".Emergency" href=".Aerodynamics">Areodynamics</button>
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-parent=".Emergency" href=".SupersonicParachute">Parachute</button>
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-parent=".Emergency" href=".Evacuate">Evacuate</button>
+                                        </div>
+                                          <div class="card mb-0">
+                                              <div class="card-body collapse Aerodynamics" data-parent=".Emergency" >
+                                                <p> Should thrusters and flaps still be responsive, they should be triggered to steer the rocket to crash inside of the safety perimeter.</p>
+                                              </div>
+                                              <div class="card-body collapse SupersonicParachute" data-parent=".Emergency" >
+                                                <p>Should steering not be a viable option the supersonic parachute should be deployed to break the fall.</p>
+                                              </div>
+                                              <div class="card-body collapse Evacuate" data-parent=".Emergency" >
+                                                <p>Should all other option fail, the rocket would still be tracked and areas could eventually be evacuated</p>
+                                              </div>
+                                          </div>
+                                      </div>                                                <p>Evacuate the impact area</p>
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="card-body collapse ElectronicsGS" data-parent=".FaultTree" >
+                                <div class="list-group">
+                                  <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Risk description</h5> </div>
+                                      <p class="mb-1"><ul>
+                                        <li>The on-board sensors stopped working, or are not reporting correctly to the on-board computer.</li>
+                                      <li>The GPS module stopped transmitting or is getting a wrong position.</li></ul></p> <small>This could have been due to overheating during the lauch phase or a short circuit in the electronics.</small> </a>
+                                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Action</h5> </div>
+                                      <div class="accordion Sensors">
+                                        <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-parent=".Sensors" href=".groundSensors">Use Ground Sensors</button>
+                                        </div>
+                                          <div class="card mb-0">
+                                              <div class="card-body collapse groundSensors" data-parent=".Sensors" >
+                                                <p>Three ground GPS and radar systems should be deployed around the safety area (on floating platforms or drones if the return is scheduled on water) to provide an emergency tracking system.
+                                                An emergency communiction module should be put in place to trigger the basic systems.</p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="accordion Emergency">
+                                        <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-parent=".Emergency" href=".Aerodynamics">Areodynamics</button>
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-parent=".Emergency" href=".SupersonicParachute">Parachute</button>
+                                        <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-parent=".Emergency" href=".Evacuate">Evacuate</button>
+                                        </div>
+                                          <div class="card mb-0">
+                                              <div class="card-body collapse Aerodynamics" data-parent=".Emergency" >
+                                                <p> Should thrusters and flaps still be responsive, they should be triggered to steer the rocket to crash inside of the safety perimeter.</p>
+                                              </div>
+                                              <div class="card-body collapse SupersonicParachute" data-parent=".Emergency" >
+                                                <p>Should steering not be a viable option the supersonic parachute should be deployed to break the fall.</p>
+                                              </div>
+                                              <div class="card-body collapse Evacuate" data-parent=".Emergency" >
+                                                <p>Should all other option fail, the rocket would still be tracked and areas could eventually be evacuated</p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </a>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Displaying thruster fault-->
+
+          <!--Displaying internal fault-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="align-self-center text-center col-md-12">
+          <h3 class="text-primary pt-3">Map projection.</h3>
+          <img class="d-block img-fluid" src="img/Map.png"> </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
